@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+        
+        <Panel expandable="false" headerText="Account Details" width="auto" class="sapUiResponsiveMargin">
+        	<content>
+            <HBox >
+            <Avatar
+							src="{/Woman01}"
+							displaySize="XL"
+							showBorder="true"
+							press="onPress"/>
+        <VBox class="sapUiSmallMargin sapUiLargeMarginBegin">
+                <HBox>
+                    <Label text="Account number :"  class="sapUiMediumMarginEnd"/>
+                    <Text text="{/bankdetails/accountnum}" />
+                </HBox>
+                <HBox>
+                    <Label text="Account name :" class="sapUiMediumMarginEnd" />
+                    <Text text="{/bankdetails/holdername}" />
+                </HBox>
+                <HBox>
+                    <Label text="IFSC code :" class="sapUiMediumMarginEnd" />
+                    <Text text="{/ifsccode}" />
+                </HBox>
+                <HBox>
+                    <Button icon="sap-icon://information"  type="Neutral" press="findmoredetails" text="Find more details"></Button>
+                </HBox>
+            </VBox>
+            </HBox> 
+            </content>
+            </Panel>
+       
+</core:FragmentDefinition>

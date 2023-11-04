@@ -1,0 +1,40 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="dialog1"
+        title="Account Details"
+    >
+        <VBox binding="{/bankdetails}">
+            <HBox>
+                <Label text="Account number :" class="sapUiMediumMarginEnd"/>
+                <Text text="{accountnum}" />
+            </HBox>
+            <HBox>
+                <Label text="Account name :" class="sapUiMediumMarginEnd"/>
+                <Text text="{holdername}" />
+            </HBox>
+            <HBox>
+                <Label text="IFSC code :" class="sapUiMediumMarginEnd" />
+                <Text text="{ifsc}" />
+            </HBox>
+            <HBox>
+                <Label text="customer id :" class="sapUiMediumMarginEnd" />
+                <Text text="{id}" />
+            </HBox>
+            <HBox>
+                <Label text="Adress :" class="sapUiMediumMarginEnd" />
+                <Text
+                    text="{address/city},{address/country},{address/postalcode}"
+                />
+            </HBox>
+        </VBox>
+        <endButton>
+            <Button
+                text="close"
+                press="onclose"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
