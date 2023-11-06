@@ -7,10 +7,13 @@
 >
     <Page
         id="page"
-        title="{Account Details}"
-    >
         
-            <core:Fragment id="bankDetailsFragment" fragmentName="sap1.view.BankDetails" type="XML"/>
+    >
+       
+       
+        <Button text="Spanish" press="onspanish"></Button>
+        
+            <core:Fragment id="bank-details" fragmentName="sap1.view.BankDetails" type="XML"/>
            
 
 

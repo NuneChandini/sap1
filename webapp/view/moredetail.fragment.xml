@@ -4,27 +4,27 @@
 >
     <Dialog
         id="dialog1"
-        title="Account Details"
+        title="{i18n>accountdetails}"
     >
         <VBox binding="{/bankdetails}">
             <HBox>
-                <Label text="Account number :" class="sapUiMediumMarginEnd"/>
+                <Label text="{i18n>accountnumber}"  class="sapUiSmallMarginBegin"/>
                 <Text text="{accountnum}" />
             </HBox>
             <HBox>
-                <Label text="Account name :" class="sapUiMediumMarginEnd"/>
+                <Label text="{i18n>accountname}" class="sapUiSmallMarginBegin"/>
                 <Text text="{holdername}" />
             </HBox>
             <HBox>
-                <Label text="IFSC code :" class="sapUiMediumMarginEnd" />
+                <Label text="{i18n>ifsc}" class="sapUiSmallMarginBegin" />
                 <Text text="{ifsc}" />
             </HBox>
             <HBox>
-                <Label text="customer id :" class="sapUiMediumMarginEnd" />
+                <Label text="{i18n>custid}" class="sapUiSmallMarginBegin" />
                 <Text text="{id}" />
             </HBox>
             <HBox>
-                <Label text="Adress :" class="sapUiMediumMarginEnd" />
+                <Label text="{i18n>address}" class="sapUiSmallMarginBegin" />
                 <Text
                     text="{address/city},{address/country},{address/postalcode}"
                 />
