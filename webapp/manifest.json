@@ -83,6 +83,12 @@
           "bundleName": "sap1.i18n.i18n"
         }
       },
+      "i18n_es": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap1.i18n.i18n_es"
+        }
+      },
       "": {
         "dataSource": "mainService",
         "preload": true,
