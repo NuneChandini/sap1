@@ -11,7 +11,6 @@ sap.ui.define([
     return Controller.extend("sap1.controller.View1", {
       onInit: function () {
 
-        
         let oData = {
           bankdetails: {
             accountnum: "12345678",

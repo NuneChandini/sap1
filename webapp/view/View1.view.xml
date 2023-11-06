@@ -5,19 +5,19 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
 >
-    <Page
-        id="page"
-        
-    >
-       
-       
-        <Button text="Spanish" press="onspanish"></Button>
-        
-            <core:Fragment id="bank-details" fragmentName="sap1.view.BankDetails" type="XML"/>
-           
+    <Page id="page">
+        <Button
+            text="Spanish"
+            press="onspanish"
+        />
 
+        <core:Fragment
+            id="bank-details"
+            fragmentName="sap1.view.BankDetails"
+            type="XML"
+        />
 
-              <!-- <VBox binding="{/bankdetails}" class="sapUiSmallMargin ">
+        <!-- <VBox binding="{/bankdetails}" class="sapUiSmallMargin ">
                 <HBox>
                     <Label text="Account number :"  class="sapUiMediumMarginEnd"/>
                     <Text text="{accountnum}" />
@@ -32,6 +32,51 @@
                 </HBox>
             </VBox> -->
 
-       
+        <Panel
+            expandable="true"
+            headerText="Card Details"
+            width="auto"
+            class="sapUiResponsiveMargin"
+        >
+            <content>
+                <List
+                    id="myList"
+                    items="" width="50%"
+                >
+                    <items>
+                        <StandardListItem
+                            title="Master Card(1234567890)"
+                            description="Debit Card assigned on 23 Aug 2017"
+                            icon="sap-icon://credit-card"
+                            iconInset="false"
+                            highlight="Information"
+                            info="Active"
+                            infoState="Information"
+                            infoStateInverted="true"
+                        />
+                        <StandardListItem
+                            title="Visa(1234567890)"
+                            description="Credit Card assigned on 23 Aug 2017"
+                            icon="sap-icon://credit-card"
+                            iconInset="false"
+                            highlight="Error"
+                            info="Expired"
+                            infoState="Error"
+                            infoStateInverted="true"
+                        />
+                        <StandardListItem
+                            title="Master Card(1234567890)"
+                            description="Debit Card assigned on 23 Aug 2017"
+                            icon="sap-icon://credit-card"
+                            iconInset="false"
+                            highlight="Success"
+                            info="Active"
+                            infoState="Success"
+                            infoStateInverted="true"
+                        />
+                    </items>
+                </List>
+            </content>
+        </Panel>
     </Page>
 </mvc:View>
