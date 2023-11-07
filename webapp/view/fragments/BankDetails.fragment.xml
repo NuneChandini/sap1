@@ -3,26 +3,27 @@
     xmlns:core="sap.ui.core"
 >
         
-        <Panel expandable="false" headerText="{i18n>accountdetails}" width="auto" class="sapUiResponsiveMargin">
-        	<content>
+        <Panel expandable="false"  width="auto" class="sapUiResponsiveMargin">
+        	<!-- headerText="{i18n>accountdetails}" for future development it is removed -->
+            <content>
             <HBox >
             <Avatar
-							src="{/Woman01}"
+							src="{/profile}"
 							displaySize="XL"
 							showBorder="true"
 							press="onPress"/>
         <VBox class="sapUiSmallMargin sapUiLargeMarginBegin">
                 <HBox>
                     <Label text="{i18n>accountnumber}"  class="sapUiMediumMarginEnd"/>
-                    <Text text="{/bankdetails/accountnum}" />
+                    <Text text="{oBankdetails>/bankdetails/accountnum}" />
                 </HBox>
                 <HBox>
                     <Label text="{i18n>accountname}" class="sapUiMediumMarginEnd" />
-                    <Text text="{/bankdetails/holdername}" />
+                    <Text text="{oBankdetails>/bankdetails/holdername}" />
                 </HBox>
                 <HBox>
                     <Label text="{i18n>ifsc}" class="sapUiMediumMarginEnd" />
-                    <Text text="{/ifsccode}" />
+                    <Text text="{oBankdetails>/ifsccode}" />
                 </HBox>
                 <HBox>
                     <Button icon="sap-icon://information"  type="Neutral" press="findmoredetails" text="{i18n>findmoredetail}"></Button>

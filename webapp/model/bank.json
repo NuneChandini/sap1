@@ -1,0 +1,35 @@
+{
+    "bankdetails": {
+        "accountnum": "0000023456798",
+        "holdername": "chandini",
+        "ifsc": "idb*******",
+        "id": "345677",
+        "address": {
+          "city": "hyderabad",
+          "postalcode": "534222",
+          "country": "india"
+        }
+      },
+      "carddetails":[
+        {
+         "cardcompany": "Master card",
+         "cardtype": "Debit Card",
+         "cardnumber":"000000123",
+         "assignmentdate":"assigned on 23 nov 2017",
+         "state": true
+      }, {
+        "cardcompany": "Master card",
+        "cardtype": "credit Card",
+         "cardnumber":"0000045673",
+         "assignmentdate":"assigned on 29 nov 2017",
+         "state": false
+     }, {
+      "cardcompany": "Master card",
+      "cardtype": "Debit Card",
+      "cardnumber":"456756789",
+      "assignmentdate":"assigned on 23 nov 2017",
+      "state": true
+   }
+    ],
+      "ifsccode": "00000000010000"   
+}
