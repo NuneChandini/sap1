@@ -1,0 +1,105 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.suite.ui.microchart"
+>
+    <Panel
+        expandable="false"
+        width="auto"
+        class="sapUiResponsiveMargin"
+    >
+        <!-- headerText="{i18n>accountdetails}" for future development it is removed -->
+        <content>
+            <HBox>
+                <Avatar
+                    src="{/profile}"
+                    displaySize="XL"
+                    showBorder="true"
+                    press="onPress"
+                />
+                <VBox class="sapUiSmallMargin sapUiLargeMarginBegin">
+                    <HBox>
+                        <Label
+                            text="{i18n>accountnumber}"
+                            class="sapUiMediumMarginEnd"
+                        />
+                        <Text text="{oBankdetails>/bankdetails/accountnum}" />
+                    </HBox>
+                    <HBox>
+                        <Label
+                            text="{i18n>accountname}"
+                            class="sapUiMediumMarginEnd"
+                        />
+                        <Text text="{oBankdetails>/bankdetails/holdername}" />
+                    </HBox>
+                    <HBox>
+                        <Label
+                            text="{i18n>ifsc}"
+                            class="sapUiMediumMarginEnd"
+                        />
+                        <Text text="{oBankdetails>/ifsccode}" />
+                    </HBox>
+                    <HBox>
+                        <Button
+                            icon="sap-icon://information"
+                            type="Neutral"
+                            press="findmoredetails"
+                            text="{i18n>findmoredetail}"
+                        />
+                    </HBox>
+                </VBox>
+                <FlexBox
+                    width="20rem"
+                    height="8rem"
+                    alignItems="Start"
+                    justifyContent="SpaceBetween"
+                >
+                    <items>
+                        <m:InteractiveDonutChart
+                            selectionChanged="onSelectionChanged"
+                        >
+                            <m:segments>
+                                <m:InteractiveDonutChartSegment
+                                    label="{i18n>allexpenses}"
+                                    value="{oBankdetails>/allexpenses}"
+                                    displayedValue="{
+                            path: 'oBankdetails>/allexpenses',
+                            formatter: '.formatter.getPercentage'
+                        }%"
+                                    color="{
+                            path: 'oBankdetails>/allexpenses',
+                            formatter: '.formatter.getState'
+                        }"
+                                />
+                                <m:InteractiveDonutChartSegment
+                                    label="{i18n>loanEMI}"
+                                    value="{oBankdetails>/loanEMI}"
+                                    displayedValue="{
+                            path: 'oBankdetails>/loanEMI',
+                            formatter: '.formatter.getPercentage'
+                        } %"
+                                    color="{
+                            path: 'oBankdetails>/loanEMI',
+                            formatter: '.formatter.getState'
+                        }"
+                                />
+                                <m:InteractiveDonutChartSegment
+                                    label="{i18n>savings}"
+                                    value="{oBankdetails>/savings}"
+                                    displayedValue="{
+                            path: 'oBankdetails>/savings',
+                            formatter: '.formatter.getPercentage'
+                        }  %"
+                                    color="{
+                            path: 'oBankdetails>/savings',
+                            formatter: '.formatter.getState'
+                        }"
+                                />
+                            </m:segments>
+                        </m:InteractiveDonutChart>
+                    </items>
+                </FlexBox>
+            </HBox>
+        </content>
+    </Panel>
+</core:FragmentDefinition>

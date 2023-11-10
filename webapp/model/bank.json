@@ -1,0 +1,39 @@
+{
+    "bankdetails": {
+        "accountnum": "****3456798",
+        "holdername": "Polisetty teja ratna mounica",
+        "ifsc": "idbi45678",
+        "id": "345677",
+        "address": {
+          "city": "west godavari",
+          "postalcode": "534222",
+          "country": "india"
+        }
+      },
+      "ifsccode": "IDBI000045678",   
+      "carddetails":[
+        {
+         "cardcompany": "Master card",
+         "cardtype": "Debit Card",
+         "cardnumber":"000000123",
+         "assignmentdate":"assigned on 23 nov 2017",
+         "state": true
+      }, {
+        "cardcompany": "Master card",
+        "cardtype": "credit Card",
+         "cardnumber":"0000045673",
+         "assignmentdate":"assigned on 29 nov 2017",
+         "state": false
+     }, {
+      "cardcompany": "Master card",
+      "cardtype": "Debit Card",
+      "cardnumber":"456756789",
+      "assignmentdate":"assigned on 23 nov 2017",
+      "state": true
+   }
+    ],
+    "allexpenses":17300,
+    "loanEMI":6000,
+    "savings":10000,
+    "empsalary": 33300
+}

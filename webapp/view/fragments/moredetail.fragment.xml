@@ -6,27 +6,27 @@
         id="dialog1"
         title="{i18n>accountdetails}"
     >
-        <VBox binding="{/bankdetails}">
+        <VBox binding="{oBankdetails>/bankdetails}">
             <HBox>
                 <Label text="{i18n>accountnumber}"  class="sapUiSmallMarginBegin"/>
-                <Text text="{accountnum}" />
+                <Text text="{oBankdetails>accountnum}" />
             </HBox>
             <HBox>
                 <Label text="{i18n>accountname}" class="sapUiSmallMarginBegin"/>
-                <Text text="{holdername}" />
+                <Text text="{oBankdetails>holdername}" />
             </HBox>
             <HBox>
                 <Label text="{i18n>ifsc}" class="sapUiSmallMarginBegin" />
-                <Text text="{ifsc}" />
+                <Text text="{oBankdetails>ifsc}" />
             </HBox>
             <HBox>
                 <Label text="{i18n>custid}" class="sapUiSmallMarginBegin" />
-                <Text text="{id}" />
+                <Text text="{oBankdetails>id}" />
             </HBox>
             <HBox>
                 <Label text="{i18n>address}" class="sapUiSmallMarginBegin" />
                 <Text
-                    text="{address/city},{address/country},{address/postalcode}"
+                    text="{oBankdetails>address/city},{oBankdetails>address/country},{oBankdetails>address/postalcode}"
                 />
             </HBox>
         </VBox>

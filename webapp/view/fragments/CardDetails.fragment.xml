@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+<Panel
+            expandable="true"
+            headerText="Card Details"
+            width="auto"
+            class="sapUiResponsiveMargin"
+        >
+            <content>
+                <List
+                    id="myList"
+                    items="{oBankdetails>/carddetails}" width="50%"
+                >
+                    <items>
+                        <StandardListItem
+                            title="{=${oBankdetails>cardcompany}.toUpperCase()} {oBankdetails>cardnumber}"
+                            description="{=${oBankdetails>cardtype}.toUpperCase()} {oBankdetails>assignmentdate}"
+                            icon="sap-icon://credit-card"
+                            iconInset="false"
+                            highlight="{=${oBankdetails>state} === true ? 'Success':'Error'}"
+                            info = "{=${oBankdetails>state} === true ? 'Active':'Expired'}"
+                            infoState="{=${oBankdetails>state} === true ? 'Success':'Error'}"
+                            infoStateInverted="true"
+                        />
+                        <!-- <StandardListItem
+                            title="Visa(1234567890)"
+                            description="Credit Card assigned on 23 Aug 2017"
+                            icon="sap-icon://credit-card"
+                            iconInset="false"
+                            highlight="Error"
+                            info="Expired"
+                            infoState="Error"
+                            infoStateInverted="true"
+                        />
+                        <StandardListItem
+                            title="Master Card(1234567890)"
+                            description="Debit Card assigned on 23 Aug 2017"
+                            icon="sap-icon://credit-card"
+                            iconInset="false"
+                            highlight="Success"
+                            info="Active"
+                            infoState="Success"
+                            infoStateInverted="true"
+                        /> -->
+                    </items>
+                </List>
+            </content>
+        </Panel>
+
+</core:FragmentDefinition>

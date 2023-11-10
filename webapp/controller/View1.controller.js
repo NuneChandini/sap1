@@ -1,33 +1,24 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
-  "sap/ui/core/Fragment"
+  "sap/ui/core/Fragment",
+  "../model/formatter"
 ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, Fragment) {
+  function (Controller, Fragment, formatter) {
     "use strict";
 
     return Controller.extend("sap1.controller.View1", {
+      formatter: formatter,
       onInit: function () {
+       this._setglobalmodel();
+        
+       let oprofile =new sap.ui.model.json.JSONModel(
+        {profile: sap.ui.require.toUrl("sap1/images/profile.JPG")}
+       );
+       this.getView().setModel(oprofile);
 
-        let oData = {
-          bankdetails: {
-            accountnum: "12345678",
-            holdername: "chandini",
-            ifsc: "idb*******",
-            id: "345677",
-            address: {
-              city: "hyderabad",
-              postalcode: "534222",
-              country: "india"
-            }
-          },
-          ifsccode: "00000000010000"
-        };
-        let oModel = new sap.ui.model.json.JSONModel();
-        oModel.setData(oData);
-        this.getView().setModel(oModel);
       },
       onspanish: function(){
         var imodel = this.getOwnerComponent().getModel("i18n_es");
@@ -52,18 +43,30 @@ sap.ui.define([
       onclose: function () {
         this.byId("dialog1").close();
       },
-
-
+      _setglobalmodel: function(){
+        let oModel = this.getOwnerComponent().getModel("oBankdetails");
+        this.getView().setModel(oModel);
+      },
       findmoredetails: function () {
         if (!this.dialog1) {
           this.dialog1 = this.loadFragment(
-            { name: "sap1.view.moredetail" }
+            { name: "sap1.view.fragments.moredetail" }
           );
         } this.dialog1.then(
           function (oDialog) {
             oDialog.open();
           }
         );
+      },
+      
+      
+      onSelectionChanged: function(oEvent){
+        let esalary = this.getOwnerComponent().getModel("oBankdetails").getProperty("/empsalary");
+        let osegment= oEvent.getParameter("segment");
+        let back = osegment.getValue();
+        let percentageval = (back/esalary)*100;
+       
+        sap.m.MessageToast.show(+osegment.getValue()+ " has spent on " +osegment.getLabel()+ ".     " +((percentageval > 35 )? "review is need":"review is not need") );
       }
 
     });
