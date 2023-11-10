@@ -1,14 +1,16 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
-  "sap/ui/core/Fragment"
+  "sap/ui/core/Fragment",
+  "../model/formatter"
 ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, Fragment) {
+  function (Controller, Fragment, formatter) {
     "use strict";
 
     return Controller.extend("sap1.controller.View1", {
+      formatter: formatter,
       onInit: function () {
        this._setglobalmodel();
         
@@ -55,6 +57,16 @@ sap.ui.define([
             oDialog.open();
           }
         );
+      },
+      
+      
+      onSelectionChanged: function(oEvent){
+        let esalary = this.getOwnerComponent().getModel("oBankdetails").getProperty("/empsalary");
+        let osegment= oEvent.getParameter("segment");
+        let back = osegment.getValue();
+        let percentageval = (back/esalary)*100;
+       
+        sap.m.MessageToast.show(+osegment.getValue()+ " has spent on " +osegment.getLabel()+ ".     " +((percentageval > 35 )? "review is need":"review is not need") );
       }
 
     });

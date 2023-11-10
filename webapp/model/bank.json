@@ -1,15 +1,16 @@
 {
     "bankdetails": {
-        "accountnum": "0000023456798",
-        "holdername": "chandini",
-        "ifsc": "idb*******",
+        "accountnum": "****3456798",
+        "holdername": "Polisetty teja ratna mounica",
+        "ifsc": "idbi45678",
         "id": "345677",
         "address": {
-          "city": "hyderabad",
+          "city": "west godavari",
           "postalcode": "534222",
           "country": "india"
         }
       },
+      "ifsccode": "IDBI000045678",   
       "carddetails":[
         {
          "cardcompany": "Master card",
@@ -31,5 +32,8 @@
       "state": true
    }
     ],
-      "ifsccode": "00000000010000"   
+    "allexpenses":17300,
+    "loanEMI":6000,
+    "savings":10000,
+    "empsalary": 33300
 }

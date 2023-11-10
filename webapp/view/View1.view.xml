@@ -8,10 +8,7 @@
 >
     <Page id="page" title="{i18n>accountdetails}">
     <headerContent>
-        <Button
-            text="Spanish"
-            press="onspanish"
-        />
+        <Button text="Spanish" press="onspanish"/>
         </headerContent>
         <content>
         <core:Fragment id="bank-details" fragmentName="sap1.view.fragments.BankDetails" type="XML"/>
