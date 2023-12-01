@@ -12,13 +12,19 @@ sap.ui.define([
     return Controller.extend("sap1.controller.View1", {
       formatter: formatter,
       onInit: function () {
-
+       
         // setting global JSON model
        this._setglobalmodel();
       // get user profile
       this._getUserProfile();
 
       },
+      onchangelag: function(oEvent){
+       var selectedItem = oEvent.getParameter("selectedItem").getProperty("key");
+       sap.ui.getCore().getConfiguration().setLanguage(selectedItem);
+
+        },
+
       /* setting user profile */
       _getUserProfile: function(){
       let oprofile =new sap.ui.model.json.JSONModel(
