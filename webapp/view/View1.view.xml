@@ -8,7 +8,13 @@
 >
     <Page id="page" title="{i18n>accountdetails}">
     <headerContent>
+        <Select forceSelection="true" change="onchangelag">
+        <core:ListItem key="en" text="Engish"></core:ListItem>
+        <core:ListItem key="es" text="Spanish"></core:ListItem>
+        <core:ListItem key="de" text="German"></core:ListItem>
+        </Select>
         <Button text="Spanish" press="onspanish"/>
+
         </headerContent>
         <content>
         <core:Fragment id="bank-details" fragmentName="sap1.view.fragments.BankDetails" type="XML"/>
